@@ -4,6 +4,10 @@ MAINTAINER Peter Garbers "peter@garbers.me"
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y curl python-setuptools
+RUN apt-get install -y python-pip
+RUN pip install pytz
+RUN pip install predictionio
+
 RUN curl http://install.prediction.io/install.sh | bash -s -- -y
 
 ENV JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"
